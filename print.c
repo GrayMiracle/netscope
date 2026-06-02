@@ -151,6 +151,7 @@ void print_packet(struct ParsedPacket *pkt, unsigned char *buffer, ssize_t bytes
             pkt->arp_sender_ip[0], pkt->arp_sender_ip[1], pkt->arp_sender_ip[2], pkt->arp_sender_ip[3],
             pkt->arp_target_ip[0], pkt->arp_target_ip[1], pkt->arp_target_ip[2], pkt->arp_target_ip[3]
         );
+        
     } else if (pkt->ethertype == 0x86DD) {
         printf("Ethernet -> IPv6 ");
 
@@ -175,6 +176,7 @@ void print_packet(struct ParsedPacket *pkt, unsigned char *buffer, ssize_t bytes
             pkt->ipv6_dst_ip[8], pkt->ipv6_dst_ip[9], pkt->ipv6_dst_ip[10], pkt->ipv6_dst_ip[11],
             pkt->ipv6_dst_ip[12], pkt->ipv6_dst_ip[13], pkt->ipv6_dst_ip[14], pkt->ipv6_dst_ip[15]
         );
+
     } else {
         printf("Ethernet -> EtherType 0x%04X\n", pkt->ethertype);
     }
